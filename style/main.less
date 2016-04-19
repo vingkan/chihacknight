@@ -2,7 +2,10 @@
 /*---> COLORS <-------------------------------*/
 /*--------------------------------------------*/
 
+@CivicBlue: #00AFF0;
+@TechRed: #E7121C;
 @Charcoal: #1a1a1a;
+@LightGray: #EEEEEE;
 
 @MainColor: @Charcoal;
 @MainLight: @MainColor + #222222;
@@ -35,6 +38,7 @@ p, h1, h2, h3, ul, li{
 
 h1, h2, h3{
 	.HeadFont();
+	font-weight: bold;
 	text-align: center;
 }
 
@@ -48,7 +52,7 @@ h2{
 	line-height: 1.5 * @tx;
 }
 
-h2{
+h3{
 	font-size: 1.1 * @tx;
 	line-height: 1.35 * @tx;
 }
@@ -60,8 +64,7 @@ p{
 }
 
 ul{
-	width: 96%;
-	margin: auto 2%;
+	width: 100%;
 }
 
 li{
@@ -105,9 +108,14 @@ body{
 
 div.breakout{
 
-	&.chosen{
-		background: @MainColor;
+		width: 96%;
+		padding: 2%;
+		display: inline-block;
+		background: @TechRed;
 		color: white;
+
+	&.chosen{
+		background: @CivicBlue;
 	}
 
 }
@@ -131,8 +139,8 @@ input, button, select{
 /*---> SCROLLBAR <----------------------------*/
 /*--------------------------------------------*/
 
-@scrollBar: white;
-@scrollBarBack: @MainColor;
+@scrollBar: @Charcoal;
+@scrollBarBack: @LightGray;
 
 ::-webkit-scrollbar{
 	width: 10px;
