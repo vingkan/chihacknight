@@ -2,17 +2,19 @@
 /*---> COLORS <-------------------------------*/
 /*--------------------------------------------*/
 
-@mainColor: #2d0a58;
-@mainLight: @mainColor + #222222;
-@mainDark: @mainColor - #222222;
+@Charcoal: #1a1a1a;
 
-@charcoal: #1a1a1a;
+@MainColor: @Charcoal;
+@MainLight: @MainColor + #222222;
+@MainDark: @MainColor - #222222;
 
 /*--------------------------------------------*/
 /*---> FONTS <--------------------------------*/
 /*--------------------------------------------*/
 
-@textSize: 3vh;
+
+@vh: 6.0px;
+@tx: 3 * @vh;
 
 .HeadFont(){
 	font-family: sans-serif;
@@ -28,7 +30,7 @@
 
 p, h1, h2, h3, ul, li{
 	.BodyFont();
-	margin: (0.5 * @textSize) auto;
+	margin: (0.5 * @tx) auto;
 }
 
 h1, h2, h3{
@@ -37,36 +39,36 @@ h1, h2, h3{
 }
 
 h1{
-	font-size: 1.5 * @textSize;
-	line-height: 1.75 * @textSize;
+	font-size: 1.5 * @tx;
+	line-height: 1.75 * @tx;
 }
 
 h2{
-	font-size: 1.25 * @textSize;
-	line-height: 1.5 * @textSize;
+	font-size: 1.25 * @tx;
+	line-height: 1.5 * @tx;
 }
 
 h2{
-	font-size: 1.1 * @textSize;
-	line-height: 1.35 * @textSize;
+	font-size: 1.1 * @tx;
+	line-height: 1.35 * @tx;
 }
 
 p{
-	font-size: 1.0 * @textSize;
-	line-height: 1.25 * @textSize;
+	font-size: 1.0 * @tx;
+	line-height: 1.25 * @tx;
 	text-align: center;
 }
 
 ul{
-	width: 80%;
-	margin: auto 10%;
+	width: 96%;
+	margin: auto 2%;
 }
 
 li{
-	font-size: 1.0 * @textSize;
-	line-height: 1.25 * @textSize;
+	font-size: 1.0 * @tx;
+	line-height: 1.25 * @tx;
 	list-style: disc;
-	margin: (0.15 * @textSize) auto;
+	margin: (0.15 * @tx) auto;
 }
 
 /*--------------------------------------------*/
@@ -74,16 +76,21 @@ li{
 /*--------------------------------------------*/
 
 html{
+	margin: 0;
+	padding: 0;
 	background: white;
 	//Default Text Styles
 	.BodyFont();
-	font-size: @textSize;
-	color: @charcoal;
+	font-size: @tx;
+	color: @Charcoal;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 body{
 	margin: 0;
-	width: 98vw;
+	padding: 0;
+	width: 100vw;
 	margin: 0 auto;
 }
 
@@ -96,7 +103,14 @@ body{
 /*---> STRUCTURE <----------------------------*/
 /*--------------------------------------------*/
 
+div.breakout{
 
+	&.chosen{
+		background: @MainColor;
+		color: white;
+	}
+
+}
 
 /*--------------------------------------------*/
 /*---> HEADER & FOOTER <----------------------*/
@@ -118,7 +132,7 @@ input, button, select{
 /*--------------------------------------------*/
 
 @scrollBar: white;
-@scrollBarBack: @mainColor;
+@scrollBarBack: @MainColor;
 
 ::-webkit-scrollbar{
 	width: 10px;
